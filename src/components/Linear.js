@@ -72,9 +72,6 @@ class Linear extends Component {
         this.setState({ prediction });
     };
 
-    onNewImage = newImageData => {
-        this.predict(newImageData);
-    };
 
     render() {
         return (
