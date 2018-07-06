@@ -42,12 +42,12 @@ class DigitalPredictor extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-sm">
+                <div className="row">
+                    <div className="col-md-3">
                         <h3>Draw Here</h3>
                         <Drawing onNewImage={this.onNewImage} />
                     </div>
-                    <div className="col-sm">
+                    <div className="col-md-6">
                         <h3>TensorFlow Prediction</h3>
                         <Chart data={this.state.predictions} />
                     </div>
