@@ -1,3 +1,6 @@
+
+import * as tf from '@tensorflow/tfjs';
+
 // 定义模型：线性回归模型 
 const model = tf.sequential();
 model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
