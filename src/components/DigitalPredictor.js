@@ -135,30 +135,6 @@ class DigitalPredictor extends Component {
                         </div>
                     </div>
                 </div>
-                <hr />
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-sm">
-                            <h1>Linear Model</h1>
-                            <h4>
-                                Predicted Value:{" "}
-                                <span className="badge badge-info">
-                                    {this.state.prediction}
-                                </span>
-                            </h4>
-                            <p>
-                                Basic TensorFlow linear regression model that was trained in the
-                                browser.
-                            </p>
-                            <input
-                                type="number"
-                                className="form-control"
-                                placeholder="enter any random numbner"
-                                onChange={e => this.linearPrediction(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                </div>
             </React.Fragment>
         );
     }
