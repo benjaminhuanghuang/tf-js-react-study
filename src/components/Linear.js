@@ -5,11 +5,8 @@ import * as tf from "@tensorflow/tfjs";
 class Linear extends Component {
 
     state = {
-        predictions: undefined,
         prediction: undefined
     };
-
-
 
     trainNewModel = async () => {
         this.linearModel = tf.sequential();

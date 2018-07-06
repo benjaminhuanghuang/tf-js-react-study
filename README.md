@@ -1,3 +1,7 @@
+## Reference
+- https://github.com/AngularFirebase/97-tensorflowjs-quick-start
+- https://github.com/justinjrussell/tensorflowjs-react
+
 ## Install
 ```
     npm install @tensorflow/tfjs -S
