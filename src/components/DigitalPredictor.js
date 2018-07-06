@@ -19,7 +19,7 @@ class DigitalPredictor extends Component {
         this.model = await tf.loadModel("../models/model.json");
     };
 
-    predict2 = async imageData => {
+    predict = async imageData => {
         await tf.tidy(() => {
             // Convert the canvas pixels to
             let img = tf.fromPixels(imageData, 1);
