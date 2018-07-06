@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack",
+    "wp": "webpack",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -28,8 +28,5 @@
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
-  "devDependencies": {
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8"
-  }
+  "devDependencies": {}
 }
