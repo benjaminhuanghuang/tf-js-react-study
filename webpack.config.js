@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     entry: {
-        entry: './hellotfjs.js'
+        entry: './index.js'//'./hellotfjs.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
