@@ -1,29 +1,15 @@
 import React, { Component } from 'react';
 import * as tf from "@tensorflow/tfjs";
 
-import Chart from "./Chart";
-import Drawing from "./Drawing";
 
-class DigitalPredictor extends Component {
+class Linear extends Component {
 
     state = {
         predictions: undefined,
         prediction: undefined
     };
 
-    componentDidMount() {
-        this.trainNewModel();
-        this.loadModel();
-    }
 
-    // loadModel = async () => {
-    //     this.model = await tf.loadModel("../models/model.json");
-    // };
-    loadModel = () => {
-
-        this.model = tf.loadModel("../models/model.json");
-        console.log(this.model);
-    };
 
     trainNewModel = async () => {
         this.linearModel = tf.sequential();
@@ -78,37 +64,6 @@ class DigitalPredictor extends Component {
         console.log("model trained!");
     };
 
-    predict2 = async imageData => {
-        await tf.tidy(() => {
-            // Convert the canvas pixels to
-            let img = tf.fromPixels(imageData, 1);
-            img = img.reshape([1, 28, 28, 1]);
-            img = tf.cast(img, "float32");
-
-            // Make and format the predications
-            const output = this.model.predict(img);
-
-            // Save predictions on the component
-            const predictions = Array.from(output.dataSync());
-            this.setState({ predictions });
-        });
-    };
-
-    predict = imageData => {
-        tf.tidy(() => {
-            // Convert the canvas pixels to
-            let img = tf.fromPixels(imageData, 1);
-            img = img.reshape([1, 28, 28, 1]);
-            img = tf.cast(img, "float32");
-
-            // Make and format the predications
-            const output = this.model.predict(img);
-
-            // Save predictions on the component
-            const predictions = Array.from(output.dataSync());
-            this.setState({ predictions });
-        });
-    };
 
     linearPrediction = val => {
         const output = this.linearModel.predict(tf.tensor2d([val], [1, 1]));
@@ -123,19 +78,6 @@ class DigitalPredictor extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-sm">
-                            <h3>Draw Here</h3>
-                            <Drawing onNewImage={this.onNewImage} />
-                        </div>
-                        <div className="col-sm">
-                            <h3>TensorFlow Prediction</h3>
-                            <Chart data={this.state.predictions} />
-                        </div>
-                    </div>
-                </div>
-                <hr />
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-sm">
@@ -164,4 +106,4 @@ class DigitalPredictor extends Component {
     }
 }
 
-export default DigitalPredictor;
+export default Linear;
