@@ -8,6 +8,10 @@ class Linear extends Component {
         prediction: undefined
     };
 
+    componentDidMount() {
+        this.trainNewModel();
+    }
+
     trainNewModel = async () => {
         this.linearModel = tf.sequential();
         this.linearModel.add(tf.layers.dense({ units: 1, inputShape: [1] }));
